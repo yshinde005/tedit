@@ -3,7 +3,9 @@
 // use termion::input::TermRead;
 // use termion::raw::IntoRawMode;
 #![warn(clippy::all, clippy::pedantic)]
+mod document;
 mod editor;
+mod row;
 
 
 // fn die(e: std::io::Error) {
@@ -12,9 +14,11 @@ mod editor;
 // 
 
 mod terminal;
+pub use document::Document;
 use editor::Editor;
-pub use terminal::Terminal;
 pub use editor::Position;
+pub use row::Row;
+pub use terminal::Terminal;
 
 fn main() {
     // let _stdout = stdout().into_raw_mode().unwrap();
